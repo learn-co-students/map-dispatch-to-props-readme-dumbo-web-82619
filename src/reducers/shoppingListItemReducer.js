@@ -1,17 +1,20 @@
-export default function shoppingListItemReducer(state = {
+const initialState = {
   items: []
-}, action) {
+}
+
+const shoppingListItemReducer = (state = initialState, action) => {
   console.log(action)
   switch(action.type) {
-
     case 'INCREASE_COUNT':
-      console.log(state.items.concat(state.items.length));
+      console.log(state.items.concat(state.items.length))
       return Object.assign({}, {
         items: state.items.concat(state.items.length)
-      });
+      })
 
     default:
       console.log(state)
-      return state;
+      return state
   }
-};
+}
+
+export default shoppingListItemReducer
